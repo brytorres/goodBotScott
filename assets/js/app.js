@@ -1,35 +1,6 @@
-// window.onload=function(){
-//     var btn = document.getElementById("bitcoin");
-//     btn.addEventListener("click", function() {
-//         getPrices('bitcoin');
-//     });
-// }
-
-// window.onload=function(){
-//     var btn = document.getElementById("ethereum");
-//     btn.addEventListener("click", function() {
-//         getPrices('ethereum');
-//     });
-// }
-
-// window.onload=function(){
-//     var btn = document.getElementById("litecoin");
-//     btn.addEventListener("click", function() {
-//         getPrices('litecoin');
-//     });
-// }
-
-document.getElementById("bitcoin").addEventListener("click", function() {
-    getPrices('bitcoin');
-});
-
-document.getElementById("ethereum").addEventListener("click", function() {
-    getPrices('ethereum');
-});
-
-document.getElementById("litecoin").addEventListener("click", function() {
-    getPrices('litecoin');
-});
+document.getElementById("bitcoin").addEventListener("click", function() {getPrices('bitcoin');});
+document.getElementById("ethereum").addEventListener("click", function() {getPrices('ethereum');});
+document.getElementById("litecoin").addEventListener("click", function() {getPrices('litecoin');});
 
 function getPrices(coin){
     axios.get('https://api.coinmarketcap.com/v1/ticker/'+coin+'/',)
@@ -54,15 +25,37 @@ function getPrices(coin){
     var percentageAverage = getAverage().toFixed(2);
 
     var coinComponentsOutput = `
-        <ul class="collection">
-            <h3 class="center-align">${name}</h3>
-            <li class="collection-item">${symbol}</li>
-            <li class="collection-item"><strong>Current Price:</strong> $${currentPrice}</li>
-            <li class="collection-item"><strong>Percentage Change 1hr:</strong> ${percentageChange1h}%</li>
-            <li class="collection-item"><strong>Percentage Change 24hr:</strong> ${percentageChange24h}%</li>
-            <li class="collection-item"><strong>Percentage Change 7d:</strong> ${percentageChange7d}%</li>
-            <li class="collection-item"><strong>Percentage Average:</strong> ${percentageAverage}%</li>
-        </ul>
+        <h3 class="center-align">${name}</h3>
+        ${symbol}
+        <div class="box price">
+            <h3 class="box">Current Price:</h3> 
+            <h4 class="box">$${currentPrice}</h4>
+        </div>
+        <br>
+        <div class="box price">
+            <div class="col l12">
+                <h5 class="center">Percentage Change</h5>
+            </div>
+            <div class="col l3">
+                <p class="percentage-time">1 Hour:</p><br>
+                <p class="percentage-data">${percentageChange1h}</p>
+            </div>
+
+            <div class="col l3">
+                <p class="percentage-time">24 hour:</p><br>
+                <p class="percentage-data">${percentageChange24h}</p>
+            </div>
+
+            <div class="col l3">
+                <p class="percentage-time">7 day:</p><br>
+                <p class="percentage-data">${percentageChange7d}</p>
+            </div>
+
+            <div class="col l3">
+                <p class="percentage-time">Average:</p><br>
+                <p class="percentage-data">${percentageAverage}</p>
+            </div>
+        </div>
     `;
 
     // Output to app

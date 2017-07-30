@@ -8,50 +8,38 @@
         <meta name="description" content="Find out what planet is currently in retrograde.">
         <meta name="author" content="Bryan Torres">
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        
-
+    
         <title>goodBotScott - The CryptoCurrency Bot</title>
 
         <!-- Materialize CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/app.css">
     </head>
 
 <body>
-    
-    <nav>
-    <div class="nav-wrapper grey darken-2">
-    <a href="#" class="brand-logo">goodBot Scott</a>
-      <ul id="nav-mobile" class="right hide-on-sm-and-down">
-        <li><button class="btn btn-flat white-text" id="bitcoin">Bitcoin</button></li>
-        <li><button class="btn btn-flat white-text" id="ethereum">Ethereum</button></li>
-        <li><button class="btn btn-flat white-text" id="litecoin">Litecoin</button></li>
-      </ul>
+    <div class="container-fluid black header center">
+        <h2>Good Bot Scott - The Cryptocurrency Bot</h2>
     </div>
-  </nav>        
 
-    <div class="row">
+    <div class="container-fluid center grey darken-4 select-coin">
+        <p>SELECT A COIN:</p>
+        <button class="btn btn-flat white-text" id="bitcoin">Bitcoin</button>
+        <button class="btn btn-flat white-text" id="ethereum">Ethereum</button>
+        <button class="btn btn-flat white-text" id="litecoin">Litecoin</button>
+    </div>
 
-        <div class="col s12 m5 l4 grey lighten-5">
-            <div>
-                
-            </div>
-
+    <div class="row container center">
+        <div class="center">
             <div id="coinInfo"></div>
         </div>
-
-        <div class="col s12 m7 l8">
-        <!-- Teal page content  -->
-      </div>
-        
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
     <script src="/assets/js/app.js"></script>
     <script>
-        $(document).ready(function() {
-            $('select').material_select();
-        });
         getPrices('bitcoin');
     </script>
 

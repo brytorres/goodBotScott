@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+body {
+  background: #333;
+  color: #FFF;
+  font-family: 'Oswald', sans-serif;
+}
+h2 {
+  color: #999;
+  font-size: 32px
+}
+.header {
+  margin-top: -35px;
+  padding: 30px
+}
+.select-coin {
+  margin-top: -30px;
+  padding: 1rem;
+}
+.box {
+  width:50%;
+  margin: 0 auto;
+  padding: 5px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  overflow: auto;
+}
+.box h3 {
+  font-size: 1.6em;
+  float: left;
+}
+.box h4 {
+  font-size: 1.5em;
+  color: #FFF !important;
+  float: right;
+}
+.price {
+  color: #14BAFC;
+  border: 3px solid #14BAFC;
+}
+.percentage-time {
+  color: #888;
+  margin-bottom: -10px;
+}
+.percentage-data {
+  color: white;
+  margin-top: -10px;
+}
+
