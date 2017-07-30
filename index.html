@@ -8,7 +8,7 @@
         <meta name="description" content="Find out what planet is currently in retrograde.">
         <meta name="author" content="Bryan Torres">
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="/assets/js/app.js"></script>
+        
 
         <title>goodBotScott - The CryptoCurrency Bot</title>
 
@@ -17,14 +17,42 @@
     </head>
 
 <body>
-    <div class="container">
-        <h4>goodBotScott - The Cryptocurrency Bot</h4>
+    
+    <nav>
+    <div class="nav-wrapper grey darken-2">
+    <a href="#" class="brand-logo">goodBot Scott</a>
+      <ul id="nav-mobile" class="right hide-on-sm-and-down">
+        <li><button class="btn btn-flat white-text" id="bitcoin">Bitcoin</button></li>
+        <li><button class="btn btn-flat white-text" id="ethereum">Ethereum</button></li>
+        <li><button class="btn btn-flat white-text" id="litecoin">Litecoin</button></li>
+      </ul>
     </div>
-    
-    <div class="card-panel" id="btcInfo"></div>
-    
+  </nav>        
+
+    <div class="row">
+
+        <div class="col s12 m5 l4 grey lighten-5">
+            <div>
+                
+            </div>
+
+            <div id="coinInfo"></div>
+        </div>
+
+        <div class="col s12 m7 l8">
+        <!-- Teal page content  -->
+      </div>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <script src="/assets/js/app.js"></script>
     <script>
-        getPrices();
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+        getPrices('bitcoin');
     </script>
 
 </body>

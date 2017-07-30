@@ -1,5 +1,38 @@
-function getPrices(){
-    axios.get('https://api.coinmarketcap.com/v1/ticker/ethereum/',)
+// window.onload=function(){
+//     var btn = document.getElementById("bitcoin");
+//     btn.addEventListener("click", function() {
+//         getPrices('bitcoin');
+//     });
+// }
+
+// window.onload=function(){
+//     var btn = document.getElementById("ethereum");
+//     btn.addEventListener("click", function() {
+//         getPrices('ethereum');
+//     });
+// }
+
+// window.onload=function(){
+//     var btn = document.getElementById("litecoin");
+//     btn.addEventListener("click", function() {
+//         getPrices('litecoin');
+//     });
+// }
+
+document.getElementById("bitcoin").addEventListener("click", function() {
+    getPrices('bitcoin');
+});
+
+document.getElementById("ethereum").addEventListener("click", function() {
+    getPrices('ethereum');
+});
+
+document.getElementById("litecoin").addEventListener("click", function() {
+    getPrices('litecoin');
+});
+
+function getPrices(coin){
+    axios.get('https://api.coinmarketcap.com/v1/ticker/'+coin+'/',)
     .then(function(response){
     // Log response
     // console.log(response);
@@ -12,7 +45,6 @@ function getPrices(){
     var percentageChange24h = parseFloat(response.data[0].percent_change_24h);
     var percentageChange7d = parseFloat(response.data[0].percent_change_7d);
     var percentageChanges = [percentageChange1h, percentageChange24h, percentageChange7d]
-    console.log(percentageChanges);
 
     // Get percentage change average
     function getAverage(){
@@ -34,7 +66,7 @@ function getPrices(){
     `;
 
     // Output to app
-    document.getElementById('btcInfo').innerHTML = coinComponentsOutput;
+    document.getElementById('coinInfo').innerHTML = coinComponentsOutput;
 
     })
     .catch(function(error){
