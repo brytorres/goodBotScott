@@ -103,7 +103,6 @@ function currentTicker(coin){
             var spread = parseFloat(priceLow - priceHigh).toFixed(2);
 
             var tickerOutput = `
-            <br>
             <div class="box price">
                 <div class="col l12">
                     <h5 class="center">Market Ticker</h5>
