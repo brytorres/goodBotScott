@@ -83,6 +83,7 @@ function getPrices(coin){
     })
 }
 
+// Get current ticker data
 function currentTicker(coin){
     if(coin === 'bitcoin'){
         coinShort = 'btc';
@@ -94,12 +95,49 @@ function currentTicker(coin){
             var priceLow = response.data.btc_usdt.low.toFixed(2);
             globals['low'] = parseFloat(priceLow);
             var priceBuy = response.data.btc_usdt.buy.toFixed(2);
-            globals['by'] = parseFloat(priceBuy);
+            globals['buy'] = parseFloat(priceBuy);
             var priceSell = response.data.btc_usdt.sell.toFixed(2);
             globals['sell'] = parseFloat(priceSell);
             var priceLast = response.data.btc_usdt.last.toFixed(2);
             globals['last'] = parseFloat(priceLast);
-            console.log(globals);
+            var spread = parseFloat(priceLow - priceHigh).toFixed(2);
+
+            var tickerOutput = `
+            <br>
+            <div class="box price">
+                <div class="col l12">
+                    <h5 class="center">Market Ticker</h5>
+                </div>  
+                <div class="col l4">
+                    <p class="percentage-time">High:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceHigh}</p>
+                </div>
+                <div class="col l4">
+                    <p class="percentage-time">Low:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceLow}</p>
+                </div>
+                <div class="col l4">
+                    <p class="percentage-time">Spread:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${spread}</p>
+                </div>
+                <hr>
+                <div class="col l4">
+                    <p class="percentage-time">Buy:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceBuy}</p>
+                </div>
+                <div class="col l4">
+                    <p class="percentage-time">Sell:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceSell}</p>
+                </div>
+                <div class="col l4">
+                    <p class="percentage-time">Last:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceLast}</p>
+                </div>
+            </div>
+            `;
+
+            // Output to app
+            document.getElementById('tickerInfo').innerHTML = tickerOutput;
         })
         .catch(function(error){
             console.log(error);
@@ -119,7 +157,44 @@ function currentTicker(coin){
             globals['sell'] = parseFloat(priceSell);
             var priceLast = response.data.eth_usdt.last.toFixed(2);
             globals['last'] = parseFloat(priceLast);
-            console.log(globals);
+            var spread = parseFloat(priceLow - priceHigh).toFixed(2);
+
+            var tickerOutput = `
+            <br>
+            <div class="box price">
+                <div class="col l12">
+                    <h5 class="center">Market Ticker</h5>
+                </div>  
+                <div class="col l4">
+                    <p class="percentage-time">High:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceHigh}</p>
+                </div>
+                <div class="col l4">
+                    <p class="percentage-time">Low:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceLow}</p>
+                </div>
+                <div class="col l4">
+                    <p class="percentage-time">Spread:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${spread}</p>
+                </div>
+                <hr>
+                <div class="col l4">
+                    <p class="percentage-time">Buy:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceBuy}</p>
+                </div>
+                <div class="col l4">
+                    <p class="percentage-time">Sell:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceSell}</p>
+                </div>
+                <div class="col l4">
+                    <p class="percentage-time">Last:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceLast}</p>
+                </div>
+            </div>
+            `;
+
+            // Output to app
+            document.getElementById('tickerInfo').innerHTML = tickerOutput;
         })
     } else {
         coinShort = 'ltc';
@@ -131,17 +206,59 @@ function currentTicker(coin){
             var priceLow = response.data.ltc_usdt.low.toFixed(2);
             globals['low'] = parseFloat(priceLow);
             var priceBuy = response.data.ltc_usdt.buy.toFixed(2);
-            globals['by'] = parseFloat(priceBuy);
+            globals['buy'] = parseFloat(priceBuy);
             var priceSell = response.data.ltc_usdt.sell.toFixed(2);
             globals['sell'] = parseFloat(priceSell);
             var priceLast = response.data.ltc_usdt.last.toFixed(2);
             globals['last'] = parseFloat(priceLast);
-            console.log(globals);
+            var spread = parseFloat(priceLow - priceHigh).toFixed(2);
+
+            var tickerOutput = `
+            <br>
+            <div class="box price">
+                <div class="col l12">
+                    <h5 class="center">Market Ticker</h5>
+                </div>  
+                <div class="col l4">
+                    <p class="percentage-time">High:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceHigh}</p>
+                </div>
+                <div class="col l4">
+                    <p class="percentage-time">Low:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceLow}</p>
+                </div>
+                <div class="col l4">
+                    <p class="percentage-time">Spread:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${spread}</p>
+                </div>
+                <hr>
+                <div class="col l4">
+                    <p class="percentage-time">Buy:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceBuy}</p>
+                </div>
+                <div class="col l4">
+                    <p class="percentage-time">Sell:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceSell}</p>
+                </div>
+                <div class="col l4">
+                    <p class="percentage-time">Last:</p>
+                    <p class="percentage-data" style="padding-top: 10px">$${priceLast}</p>
+                </div>
+            </div>
+            `;
+
+            // Output to app
+            document.getElementById('tickerInfo').innerHTML = tickerOutput;
         })
     }
+
+    
 }
+
 
 function runAll(coin){
     getPrices(coin);
     currentTicker(coin);
 }
+
+
