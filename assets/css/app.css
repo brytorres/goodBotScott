@@ -9,6 +9,12 @@ h1 {
   color: #999;
   font-size: 16px
 }
+a { 
+  color: grey;
+}
+a:hover {
+  color: #2ab7a9;
+}
 .header {
   margin-top: -30px;
   margin-bottom: -35px;
@@ -17,7 +23,7 @@ h1 {
 .select-coin {
 }
 .box {
-  width:50%;
+  width:65%;
   margin: 0 auto;
   padding: 5px;
   text-transform: uppercase;
@@ -29,13 +35,17 @@ h1 {
   float: left;
 }
 .box h4 {
-  font-size: 1.5em;
+  font-size: 1.6em;
   color: #FFF !important;
   float: right;
 }
 .price {
-  color: #14BAFC;
-  border: 3px solid #14BAFC;
+  color: #2ab7a9;
+  border: 3px solid #2ab7a9;
+}
+.percentage {
+  color: #2ab7a9;
+  border: 3px solid #2ab7a9;
 }
 .percentage-time {
   color: #888;
