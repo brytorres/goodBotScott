@@ -5,9 +5,9 @@ body {
   color: #FFF;
   font-family: 'Oswald', sans-serif;
 }
-h2 {
+h1 {
   color: #999;
-  font-size: 32px
+  font-size: 24px
 }
 .header {
   margin-top: -35px;
